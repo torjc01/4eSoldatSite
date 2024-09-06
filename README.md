@@ -53,3 +53,9 @@ docker run -p 3000:3000 4soldat
 ```
 
 Acesse a aplicacao via browser pelo endereço : http://localhost:3000
+
+Para acessar a estrutura do container docker: 
+
+```bash
+docker exec -it 4soldat /bin/sh
+```

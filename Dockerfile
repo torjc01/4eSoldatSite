@@ -1,22 +1,74 @@
-FROM node:alpine
+###########################
+### BUILD FOR LOCAL DEV ###
+###########################
 
-# Set the working directory
-WORKDIR /app
+FROM node:18-alpine3.17 as development
 
-# Copy the package.json and package-lock.json files 
-COPY package*.json ./
+# Create app directory
+WORKDIR /usr/src/app
 
-# Install dependencies
-RUN npm install
+# Copy application dependency manifests to the container images. 
+# A wildcard is used to ensure copying bothpackage.json and package_lock.json (when available). 
+# Copying this first prevents re-running npm install on every code change. 
+COPY --chown=node:node package*.json ./
 
-# Copy the app files
-COPY . . 
+# For syncing the package and lock files.
+RUN npm install 
 
-# Build the app 
+# Install app dependencies using 'npm ci' instead of 'npm install'
+RUN npm ci
+
+# Bundle app source
+COPY --chown=node:node . .
+
+# Use the node user from the image (instead of the root user)
+USER node
+
+######################
+### BUILD FOR PROD ###
+######################
+
+FROM node:18-alpine3.17 as builder
+
+WORKDIR /usr/src/app
+
+COPY --chown=node:node package*.json ./
+
+# In order to run 'npm run build', we need access to the Cest CLI which is a dev dependency. 
+# In the previous dev stage we ran 'npm ci' which installed all dependencies, so we can copy 
+# over the node_modules directory from the development image 
+COPY --chown=node:node --from=development /usr/src/app/node_modules ./node_modules
+
+
+COPY --chown=node:node . . 
+
+# Run the build command which creates the production bundle 
 RUN npm run build
 
-# Expose the port 
-EXPOSE 3000 
+# Set the NODE_ENV environment variable
+ENV NODE_ENV production
 
-# Run the app 
-CMD ["npm", "start"]
+RUN npm install
+
+# Running 'npm ci' removes the existing node_modules directory and passing in --only=production
+# ensures that only the production dependencies are installed. This ensures that the node_modules
+# directory is as optimized as possible. 
+RUN npm ci --only=production --omit=dev && npm cache clean --force 
+
+USER node
+
+##################
+### PRODUCTION ### 
+##################
+
+FROM node:18-alpine3.17 as PRODUCTION
+
+# Install the serving tool 
+RUN npm install -g serve
+
+# Copy the bundled code from the build stage to the production image 
+COPY --chown=node:node --from=builder /usr/src/app/node_modules ./node_modules
+COPY --chown=node:node --from=builder /usr/src/app/dist ./dist
+
+# Start the server using the production build 
+CMD [ "serve", "-s", "dist" ]
