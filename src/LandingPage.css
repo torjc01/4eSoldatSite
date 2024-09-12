@@ -153,3 +153,42 @@ footer {
   background-color: #3f51b5;
   color: white;
 }
+
+.msgAvail {
+  display: none;
+}
+
+.footerClass{
+  background-color: white;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile{
+  background-color: rgb(107, 167, 219);
+  background-size: cover;
+  background-position: center;
+  padding: 0.75rem 1.5rem;
+
+}
+
+.profileHeader{
+  background-color: #616161;
+  color:white;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 0.75rem 1.5rem;
+ 
+}
+
+.profileFooter{
+  background-color: #616161;
+  color:white;
+  background-size: cover;
+  background-position: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 0.75rem 1.5rem;
+}

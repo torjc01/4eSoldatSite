@@ -93,9 +93,11 @@ const LandingPage = () => {
             <img src="github.png" width="50" alt={t('githubTitle')} />
             <h2>{t('githubTitle')}</h2>
             <p>{t('githubDescription')}</p>
-            <button onClick={() => handleDownload("Le quatrieme soldat.pptx")}>
-              {t('githubButton')}
-            </button>
+            <a href="https://www.github.com/torjc01/4eSoldat">
+              <button>
+                {t('githubButton')}
+              </button>
+            </a>
           </div>
           
         </div>
