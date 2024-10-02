@@ -61,7 +61,14 @@ const LandingPage = () => {
           <img src="AlbionLogo.png" alt="Lodge Logo" className="lodge-logo" />
           <h1>{t('title')}</h1>
         </div>
-        <p>{t('subtitle')}</p>
+        <h2> {t('subtitle')}</h2>
+        <p align="justify">  {t('txt1')}</p>
+        <p align="justify">  {t('txt2')} {t('txt3')} </p>
+        <p align="justify">  {t('txt4')} </p> 
+        <p align="justify">  {t('txt5')} {t('txt6')} </p> 
+        <p align="justify">  {t('txt7')} </p>
+        <p align="center">  <b>{t('txt8')} </b> </p>
+
       </header>
       <main>
         <div className="ebook-container">
