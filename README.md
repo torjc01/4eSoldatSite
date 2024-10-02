@@ -56,7 +56,7 @@ Acesse a aplicacao via browser pelo endereço : http://localhost:3000
 Para acessar a estrutura do container docker: 
 
 ```bash
-docker exec -it juliozohar/4soldat:1.0 /bin/sh &
+docker exec -it juliozohar/4esoldat:1.0 /bin/sh &
 ```
 
 
