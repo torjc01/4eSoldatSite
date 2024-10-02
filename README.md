@@ -1,6 +1,4 @@
-# Projeto Le Site du 4e Soldat
-
-Site pour le téléchargement de la documentation du 4e Soldat. 
+# Projeto Le 4e Soldat 
 
 ## Criação do projeto Node 
 
@@ -43,13 +41,14 @@ CMD ["npm", "start"]
 Faça o build da imagem 
 
 ```bash
-docker build -t 4soldat .
+docker build -t juliozohar/4esoldat:1.0 .
+docker push juliozohar/4esoldat:1.0
 ```
 
 Execute o container 
 
 ```bash
-docker run -d -p 3000:3000 4soldat &
+docker run -p 3000:3000 juliozohar/4esoldat:1.0
 ```
 
 Acesse a aplicacao via browser pelo endereço : http://localhost:3000
