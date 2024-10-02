@@ -41,14 +41,14 @@ CMD ["npm", "start"]
 Faça o build da imagem 
 
 ```bash
-docker build -t juliozohar/4esoldat:1.0 .
-docker push juliozohar/4esoldat:1.0
+docker build -t juliozohar/4esoldat:1.1 .
+docker push juliozohar/4esoldat:1.1
 ```
 
 Execute o container 
 
 ```bash
-docker run -p 3000:3000 juliozohar/4esoldat:1.0
+docker run -p 3000:3000 juliozohar/4esoldat:1.1
 ```
 
 Acesse a aplicacao via browser pelo endereço : http://localhost:3000
