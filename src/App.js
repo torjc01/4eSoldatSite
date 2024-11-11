@@ -81,7 +81,7 @@ const LandingPage = () => {
             <p>Visionnez la présentation Powerpoint complète de la Soirée Militaire.</p>
             <p>Disponible à partir de 15/11/2024.</p>
             <p>Language: Français.</p>
-            <button enabled="false">
+            <button onClick={() => handleDownload("P202401-PPT-LeQuatriemeSoldat-vFinale.pptx")}>
               Télécharger Powerpoint
             </button>
           </div>
