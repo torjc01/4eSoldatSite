@@ -34,6 +34,9 @@ const LandingPage = () => {
       });
   };
 
+  const unavailable = () => {
+    window.alert('Fichier disponible à partir de 15/11/2024.');
+  }
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
@@ -58,7 +61,7 @@ const LandingPage = () => {
           </button>
         </div>
         <div className="header-content">
-          <img src="AlbionLogo.png" alt="Lodge Logo" className="lodge-logo" />
+          
           <h1>{t('title')}</h1>
         </div>
         <h2> {t('subtitle')}</h2>
@@ -73,33 +76,22 @@ const LandingPage = () => {
       <main>
         <div className="ebook-container">
           <div className="ebook">
-            <img src="epub.png"  width="50" alt={t('book1Title')} />
-            <h2>{t('book1Title')}</h2>
-            <p>{t('book1Description')}</p>
-            <button onClick={() => handleDownload("The Fourth Soldier CAY.epub")}>
-              {t('book1Button')}
+            <img src="ppt.png"  width="50" alt={t('book1Title')} />
+            <h2>Présentation Powerpoint</h2>
+            <p>Visionnez la présentation Powerpoint complète de la Soirée Militaire.</p>
+            <p>Disponible à partir de 15/11/2024.</p>
+            <p>Language: Français.</p>
+            <button enabled="false">
+              Télécharger Powerpoint
             </button>
           </div>
-          <div className="ebook">
-            <img src="pdf.png" width="50" alt={t('book3Title')} />
-            <h2>{t('book3Title')}</h2>
-            <p>{t('book3Description')}</p>
-            <button onClick={() => handleDownload("Le quatrieme soldat.pptx")}>
-              {t('book3Button')}
-            </button>
-          </div>
-          <div className="ebook">
-            <img src="ppt.png" width="50" alt={t('book2Title')} />
-            <h2>{t('book2Title')}</h2>
-            <p>{t('book2Description')}</p>
-            <button onClick={() => handleDownload("Le quatrieme soldat.pptx")}>
-              {t('book2Button')}
-            </button>
-          </div>
+          
           <div className="ebook">
             <img src="github.png" width="50" alt={t('githubTitle')} />
             <h2>{t('githubTitle')}</h2>
-            <p>{t('githubDescription')}</p>
+            <p>Visionnez le dépôt de notes et d'informations complémentaires de la recherche.</p>
+            <p>&nbsp;</p>
+            <p>Languages: Français et anglais.</p>
             <a href="https://www.github.com/torjc01/4eSoldat">
               <button>
                 {t('githubButton')}
@@ -107,10 +99,18 @@ const LandingPage = () => {
             </a>
           </div>
           
+          <div className="ebook">
+            <h2>Contenu téléchargeable</h2>
+            <p align="center"> Les autres fichiers à télécharger et le formulaire d'inscription pour l'article complèt seront disponibles ici à partir du </p>
+            <h3>15 novembre 2024.</h3>
+          </div>
+          
+          
+          
         </div>
       </main>
       <footer>
-        <p>{t('footer')}</p>
+        
       </footer>
     </div>
   );

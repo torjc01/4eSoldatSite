@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  react-app:
+    image: juliozohar/4esoldat:1.4
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./public:/app/public
+      # Add source code volume for development (optional)
+      - ./src:/app/src
+    environment:
+      - CHOKIDAR_USEPOLLING=true

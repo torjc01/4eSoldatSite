@@ -41,8 +41,8 @@ CMD ["npm", "start"]
 Faça o build da imagem 
 
 ```bash
-docker build -t juliozohar/4esoldat:1.1 .
-docker push juliozohar/4esoldat:1.1
+docker build -t juliozohar/4esoldat:1.4 .
+docker push juliozohar/4esoldat:1.4
 ```
 
 Execute o container 
