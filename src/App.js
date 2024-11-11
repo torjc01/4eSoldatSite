@@ -34,9 +34,6 @@ const LandingPage = () => {
       });
   };
 
-  const unavailable = () => {
-    window.alert('Fichier disponible à partir de 15/11/2024.');
-  }
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };

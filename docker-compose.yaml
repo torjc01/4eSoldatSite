@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   react-app:
-    image: juliozohar/4esoldat:1.4
+    image: juliozohar/4esoldat:1.6
     ports:
       - "3000:3000"
     volumes:
