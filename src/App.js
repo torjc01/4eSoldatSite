@@ -88,7 +88,7 @@ const LandingPage = () => {
             <h2>{t('githubTitle')}</h2>
             <p>Visionnez le dépôt de notes et d'informations complémentaires de la recherche.</p>
             <p>&nbsp;</p>
-            <p>Languages: Français et anglais.</p>
+            <p>Languages: Français et Anglais.</p>
             <a href="https://www.github.com/torjc01/4eSoldat">
               <button>
                 {t('githubButton')}
@@ -97,9 +97,22 @@ const LandingPage = () => {
           </div>
           
           <div className="ebook">
+            <img src="podcast.png" width="150" alt={t('githubTitle')} />
+            <h2>Podcast Soldats </h2>
+            <p>Écoutez l'histoire incroyable du Lt-Col Charles Alexander Young, sa vie, ses accomplissements et sa famille.</p>
+            <p>&nbsp;</p>
+            <p>Language: Anglais.</p>
+            <a href="https://soundcloud.com/julio-cesar-21/podcast-lieutenant-colonel?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing&si=7d3e0d403c614f40916a145185779e35" target="_blank">
+              <button>
+                Écoutez dès maintenant
+              </button>
+            </a>
+          </div>
+
+          <div className="ebook">
             <h2>Contenu téléchargeable</h2>
-            <p align="center"> Les autres fichiers à télécharger et le formulaire d'inscription pour l'article complèt seront disponibles ici à partir du </p>
-            <h3>15 novembre 2024.</h3>
+            <p align="center"> Les autres fichiers à télécharger et le formulaire d'inscription pour l'article complèt seront disponibles ici </p>
+            <h3>très prochainement.</h3>
           </div>
           
           

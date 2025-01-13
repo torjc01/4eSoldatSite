@@ -1,3 +1,4 @@
 node-modules/*
 *.old
 create-react-app.mod
+.DS_Store

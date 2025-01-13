@@ -2,7 +2,8 @@ version: '3.8'
 
 services:
   react-app:
-    image: juliozohar/4esoldat:1.6
+    platform: linux/amd64
+    image: juliozohar/4esoldat:1.7
     ports:
       - "3000:3000"
     volumes:
